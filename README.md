@@ -32,7 +32,6 @@ Certain ZMK features (e.g. combos) require knowing the exact key positions in th
 #### Windows specific
 
 * If compiling on Windows use WSL2 and Docker [Docker Setup Guide](https://docs.docker.com/desktop/windows/wsl/).
-* Install make using `sudo apt-get install make` inside the WSL2 instance.
 * The repository can be cloned directly into the WSL2 instance or accessed through the C: mount point WSL provides by default (`/mnt/c/path-to-repo`).
 
 #### macOS specific
