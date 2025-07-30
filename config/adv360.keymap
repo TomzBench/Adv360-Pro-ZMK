@@ -2,7 +2,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/stp.h>
 #include <dt-bindings/zmk/backlight.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define QWERTY_L     0
 #define NUM_L        1
@@ -21,6 +23,7 @@
     behaviors {
       #include "macros.dtsi"
       #include "tomzbench.dtsi"
+      #include "version.dtsi"
 
       hm: homerow_mods {
           compatible = "zmk,behavior-hold-tap";
@@ -37,6 +40,7 @@
     compatible = "zmk,keymap";
 
     default_layer {
+      display-name = "Base";
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                &mo 3 &kp N6 &kp N7   &kp N8    &kp N9   &kp N0   &kp BSLH
         &kp GRAVE &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                 &none &kp Y  &kp U    &kp I     &kp O    &kp P    &kp MINUS
@@ -46,6 +50,7 @@
       >;
     };
     keypad {
+      display-name = "Kp";
       bindings = <
         &trans    &trans    &trans   &trans   &trans     &trans    &trans                                                      &mo 3 &trans &trans    &trans   &trans    &trans   &trans
         &trans    &kp PLUS  &kp N7   &kp N8   &kp N9     &kp N0    &none                                                       &none &trans &trans    &trans   &trans    &trans   &trans
@@ -55,6 +60,7 @@
       >;
     };
     sym {
+      display-name = "Sym";
       bindings = <
         &trans &trans   &trans    &trans   &trans    &trans  &none                                           &none &trans    &trans     &trans      &trans    &trans   &trans 
         &trans &trans   &trans    &trans   &trans    &trans  &none                                           &none &kp TILDE &kp AMPS   &kp ASTRK   &kp LPAR  &kp RPAR &trans
@@ -70,7 +76,24 @@
         &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_NXT          &none  &none  &none  &none  &none       &none     &none      &none       &none     &none    &none 
         &none         &none         &none        &none         &none         &none                             &none  &none                            &none     &none      &none       &none     &none    &none 
         &none         &none         &none        &none         &none                             &none  &none  &none  &none  &none    &none                      &none      &none       &none     &none    &none 
-      >;
+    extra1 { 
+      display-name = "Red";    
+      status = "reserved";
+    };
+
+    extra2 { 
+      display-name = "Purple";    
+      status = "reserved";
+    };
+
+    extra3 { 
+      display-name = "Cyan";    
+      status = "reserved";
+    };
+
+    extra4 { 
+      display-name = "Yellow";    
+      status = "reserved";
     };
   };
 };
